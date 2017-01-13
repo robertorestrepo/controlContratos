@@ -55,6 +55,16 @@ class Contrato
      * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id")
      */
     private $categoria;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Product", mappedBy="contrato")
+     */
+    private $product;
+    
+    public function __construct()
+    {
+    $this->products = new ArrayCollection();
+    }
 
 
     /**
@@ -209,5 +219,39 @@ class Contrato
     public function getCategoriaId()
     {
         return $this->categoria;
+    }
+
+    /**
+     * Add product
+     *
+     * @param \AppBundle\Entity\Product $product
+     *
+     * @return Contrato
+     */
+    public function addProduct(\AppBundle\Entity\Product $product)
+    {
+        $this->product[] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Remove product
+     *
+     * @param \AppBundle\Entity\Product $product
+     */
+    public function removeProduct(\AppBundle\Entity\Product $product)
+    {
+        $this->product->removeElement($product);
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProduct()
+    {
+        return $this->product;
     }
 }

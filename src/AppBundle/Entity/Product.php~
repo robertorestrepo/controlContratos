@@ -22,6 +22,19 @@ class Product
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ruta", type="string", length=255)
+     */
+    private $ruta;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Contrato", inversedBy="product")
+     * @ORM\JoinColumn(name="contrato_id", referencedColumnName="id")
+     */
+    private $product;
 
     /**
      * @var string

@@ -22,6 +22,19 @@ class Product
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ruta", type="string", length=255)
+     */
+    private $ruta;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Contrato", inversedBy="product")
+     * @ORM\JoinColumn(name="contrato_id", referencedColumnName="id")
+     */
+    private $product;
 
     /**
      * @var string
@@ -90,5 +103,53 @@ class Product
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * Set ruta
+     *
+     * @param string $ruta
+     *
+     * @return Product
+     */
+    public function setRuta($ruta)
+    {
+        $this->ruta = $ruta;
+
+        return $this;
+    }
+
+    /**
+     * Get ruta
+     *
+     * @return string
+     */
+    public function getRuta()
+    {
+        return $this->ruta;
+    }
+
+    /**
+     * Set product
+     *
+     * @param \AppBundle\Entity\Contrato $product
+     *
+     * @return Product
+     */
+    public function setProduct(\AppBundle\Entity\Contrato $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \AppBundle\Entity\Contrato
+     */
+    public function getProduct()
+    {
+        return $this->product;
     }
 }

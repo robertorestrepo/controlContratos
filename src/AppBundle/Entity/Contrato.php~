@@ -55,6 +55,16 @@ class Contrato
      * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id")
      */
     private $categoria;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Product", mappedBy="contrato")
+     */
+    private $product;
+    
+    public function __construct()
+    {
+    $this->products = new ArrayCollection();
+    }
 
 
     /**

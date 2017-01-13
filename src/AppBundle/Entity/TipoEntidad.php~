@@ -41,10 +41,6 @@ class TipoEntidad
      * @ORM\Column(name="current", type="date")
      */
     private $current;
-    
-    public function __construct(){
-        $this->date = new \DateTime();
-    }
 
 
     /**
