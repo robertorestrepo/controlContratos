@@ -72,3 +72,10 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~    
+        
+vich_uploader:
+    db_driver: orm
+    mappings:
+        product_image:
+            uri_prefix:         /files/documents
+            upload_destination: '%kernel.root_dir%/../web/files/documents'
