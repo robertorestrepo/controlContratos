@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>TipoEntidad creation</h1>
+
+    {{ form_start(form) }}
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                {{ form_label(form.idTipo) }}
+                {{ form_widget(form.idTipo) }}
+            </div>
+        </div>    
+        <div class="row">  
+            <div class="col-md-4">
+                {{ form_label(form.tipo) }}
+                {{ form_widget(form.tipo) }}
+            </div>
+        </div>    
+        <div class="row">  
+            <div class="col-md-4">
+                {{ form_label(form.current) }}
+                {{ form_widget(form.current) }}
+            </div>
+        </div>    
+        <input type="submit" value="Create" class="btn-success" />
+    {{ form_end(form) }}
+    </div>
+    <ul>
+        <li>
+            <a href="{{ path('tipoentidad_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

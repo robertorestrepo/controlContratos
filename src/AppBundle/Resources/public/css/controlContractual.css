@@ -1,0 +1,194 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(Roboto/Roboto-light.ttf) format("truetype");
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body{
+    background:#f9f9f9;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    color:#333;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight:300;
+    margin:0;
+}
+hr{
+    margin:5px 0;
+}
+label{
+    font-weight:400;
+    font-size:1.2em;
+}
+.form-control{
+    height:34px;
+    font-size:1.2em;
+}
+/* Navbar */
+.navbar-default{
+    background:#0D71B9;
+    color:#fff;
+    border-radius:0;
+    border:1px solid #0D71B9;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.navbar-default .navbar-nav > li > a{
+    color:#fff;
+}
+.navbar-default .navbar-nav > li > a:hover{
+    color:#f0f0f0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover{
+    background-color:#0069AA;
+    color:#fff;
+}
+.dropdown-menu{
+    min-width:250px;
+}
+.navbar-default .navbar-toggle {
+    border-color: #0D71B9;
+    background:#fff;
+}
+.navbar-default .navbar-toggle .icon-bar{
+    background-color: #0D71B9;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #0D71B9;
+}
+.nav-text{
+    color:#fff;
+    float:left;
+    text-transform:uppercase;
+    margin:15px 0;
+}
+.navimg{
+    float:left;
+    margin:10px 10px 0 0;
+    width:40px;
+}
+/* Cards */
+.card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding:20px;
+  background:#fff;
+  border-top:3px solid #0D71B9;
+}
+
+/* Container Login*/
+.containerLogin{
+    max-width:400px;
+}
+.logoImex{
+    max-width:80px;
+    margin:-15px 0 0 10px;
+}
+/* Buttons */
+.btn-success{
+    background: #0D71B9;
+    border:1px solid #0D71B9;
+}
+.btn-success:hover,.btn-success.focus,.btn-success.active, .btn-success.focus,
+.btn-success.active:focus, .btn-success:active:focus, .btn-success.active.focus, .btn-success.active:hover .btn-success:focus, 
+.btn-success:active, .btn-success.focus:active, .btn-success:active:hover{
+    background:#0E679E;
+    border:1px solid #0E679E;
+}
+/* Tablas */
+.table{
+    text-transform:uppercase;
+}
+.table > thead > tr{
+    font-weight:bold;
+     background: #0D71B9;
+     color:#fff;
+}
+.glyphicon-table{
+    color:#0D71B9;
+}
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+tfoot {
+        display: table-header-group;
+}
+
+div.DTTT { margin-bottom: 0.5em; float: right; }
+div.dataTables_wrapper { clear: both; }
+.input-group input{
+        height:34px;
+        border-radius: 4px;
+}
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #fff;
+  padding:10px 0;
+  border-top:3px solid #0D71B9;
+}
+
+/* Media querys */
+@media screen and (min-width: 960px) {
+    .containerLogin{
+        margin-top:200px;
+    }
+    .panelLogin{
+        margin-bottom:50px;
+    }
+    .navbar{
+        font-size:1.5em;
+    }
+    .glyphicon-nav{
+        font-size:1.3em;
+    }
+    .glyphicon-table{
+        font-size:1.5em;
+    }
+    .table{
+        font-size:1.1em;
+    }
+    .table > thead > tr > td{
+        font-weight:bold;
+    }
+}
+@media screen and (max-width: 960px) {
+    input{
+        box-shadow:none;
+    }
+    .containerLogin{
+        margin-top:50px;
+    }
+    .panelLogin{
+        margin-bottom:30px;
+    }
+    .dataTables_length{
+        display:none;
+    }
+    .glyphicon-nav{
+        font-size:2em;
+    }
+    .glyphicon-table{
+        font-size:1.5em;
+    }
+    div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper div.dataTables_filter, div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
+        text-align: right;
+    }
+}
+@media screen and (max-width: 380px) {
+    .containerLogin{
+        margin-top:20px;
+    }
+    .panelLogin{
+        margin-bottom:30px;
+    }
+}

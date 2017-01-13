@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>TipoEntidad list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tipo</th>
+                <th>Idtipo</th>
+                <th>Current</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tipoEntidad in tipoEntidads %}
+            <tr>
+                <td><a href="{{ path('tipoentidad_show', { 'id': tipoEntidad.id }) }}">{{ tipoEntidad.id }}</a></td>
+                <td>{{ tipoEntidad.tipo }}</td>
+                <td>{{ tipoEntidad.idTipo }}</td>
+                <td>{% if tipoEntidad.current %}{{ tipoEntidad.current|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tipoentidad_show', { 'id': tipoEntidad.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tipoentidad_edit', { 'id': tipoEntidad.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tipoentidad_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
